@@ -1,0 +1,29 @@
+"$schema" = "https://open-api.netlify.com/netlify.schema.json"
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+  environment = { NODE_VERSION = "22" }
+
+[functions]
+  node_bundler = "esbuild"
+  included_files = [
+    "参考图鉴.js",
+    "图鉴素材/atlas/词条.js",
+    "图鉴素材/motion/词条.js",
+    "图鉴素材/styles/词条.js",
+    "图鉴素材/design-md/*.md",
+    "skills/**"
+  ]
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

@@ -1,0 +1,31 @@
+{
+  "name": "my-visual-library",
+  "version": "1.0.0",
+  "description": "Local-first visual curation studio, 1,216+ design references/motion demos/DESIGN.md recipes, and built-in MCP server for AI coding agents (Non-Commercial).",
+  "license": "SEE LICENSE IN LICENSE",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 48138 --strictPort",
+    "build": "vite build",
+    "start": "node server/local-app.js",
+    "mcp": "node server/mcp-server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@netlify/database": "^2.0.3",
+    "@netlify/functions": "^6.1.1",
+    "@radix-ui/react-popover": "^1.3.1",
+    "@radix-ui/react-select": "^2.4.1",
+    "lucide-react": "^1.76.0",
+    "motion": "^14.14.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@vitejs/plugin-react": "^6.3.0",
+    "tailwindcss": "^4.3.5",
+    "vite": "^8.3.8"
+  }
+}

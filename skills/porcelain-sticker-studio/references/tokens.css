@@ -1,0 +1,283 @@
+/* ==========================================================================
+   Porcelain Sticker Studio — Production Reusable CSS Foundation (95%+ Fidelity)
+   Drop into any React + Vite / Tailwind v4 project as the visual layer.
+   ========================================================================== */
+
+:root {
+  --paper: #f9f7f2;
+  --canvas: #f5f5f7;
+  --surface: #ffffff;
+  --surface-subtle: #f5f5f7;
+  --gallery-matte: #f2f2f5;
+  --ink: #1d1d1f;
+  --ink-secondary: #424245;
+  --muted: #6e6e73;
+  --accent: #0071e3;
+  --accent-hover: #0077ed;
+  --action: #0071e3;
+  --action-ink: #ffffff;
+  --soft: rgba(0, 113, 227, 0.1);
+  --spark: #f5b942;
+  --danger: #d93025;
+  --line: rgba(29, 29, 31, 0.09);
+  --line-strong: rgba(29, 29, 31, 0.16);
+  --chapter-reference: #eef4fb;
+  --chapter-technique: #f4f1fb;
+  --chapter-style: #fbf5ec;
+  --card-sheen: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 12px 32px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.14);
+  --top-offset: 78px;
+  --logo-rim: #fffdf9;
+  font-family: "SF Pro Text", "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+
+[data-theme="night"] {
+  --paper: #090b10;
+  --canvas: #0f1219;
+  --surface: #151822;
+  --surface-subtle: #1c202e;
+  --gallery-matte: #12151f;
+  --ink: #f5f5f7;
+  --ink-secondary: #d1d1d6;
+  --muted: #98989d;
+  --accent: #2997ff;
+  --accent-hover: #40a5ff;
+  --action: #2997ff;
+  --soft: rgba(41, 151, 255, 0.16);
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --chapter-reference: #0e1624;
+  --chapter-technique: #161224;
+  --chapter-style: #1d1712;
+  --card-sheen: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.34);
+  --shadow-md: 0 16px 38px rgba(0, 0, 0, 0.48);
+  --shadow-lg: 0 28px 68px rgba(0, 0, 0, 0.64);
+  --logo-rim: rgba(255, 255, 255, 0.28);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 2.5% Procedural Paper Grain Tie-Together */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Sticky Frosted Top Bar + 3-Way Theme Switcher */
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 12px 16px;
+}
+.top .wrap {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 7px 10px 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: var(--card-sheen), var(--shadow-sm);
+}
+
+.top-nav, .theme-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink) 4%, transparent);
+}
+[data-theme="night"] .top-nav,
+[data-theme="night"] .theme-switcher {
+  background: rgba(255, 255, 255, 0.06);
+}
+.theme-switcher { justify-self: end; }
+.theme-opt {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.theme-opt.is-active, .theme-opt:hover { color: var(--ink); }
+.theme-opt svg { position: relative; z-index: 1; }
+.theme-opt-pill, .top-nav-pill {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+[data-theme="night"] .theme-opt-pill,
+[data-theme="night"] .top-nav-pill {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* Curved Left SVG Scroll Rail (Desktop >= 1100px) */
+.scroll-rail {
+  display: none;
+  position: fixed;
+  inset: 50% auto auto 0;
+  z-index: 6;
+  width: 280px;
+  height: min(90vh, 820px);
+  overflow: hidden;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.scroll-rail-curve {
+  position: absolute;
+  top: 50%;
+  left: -1463px;
+  width: 1520px;
+  height: 1520px;
+  border: 1px solid color-mix(in srgb, var(--ink) 11%, transparent);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.scroll-rail-curve-lit {
+  border-width: 1.5px;
+  border-color: var(--accent);
+  mask-image: linear-gradient(transparent 36%, #0008 45%, #000 50%, #0008 55%, transparent 64%);
+}
+@media (min-width: 1100px) {
+  .scroll-rail { display: block; }
+}
+
+/* Hero Concentric Halos + Layering Rule (Stickers z-index: 4 above text margins) */
+.hero {
+  position: relative;
+  min-height: calc(100svh - var(--top-offset));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 3vh, 34px);
+  padding: 28px 20px 36px;
+  text-align: center;
+  overflow: clip;
+}
+.hero-copy { position: relative; z-index: 3; pointer-events: none; }
+.hero-copy > * { pointer-events: auto; }
+.hero-stickers { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+button.animated-sticker {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.hero-halo {
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  border-radius: 50%;
+  border: 1px dashed color-mix(in srgb, var(--accent) 16%, transparent);
+  transform: translate(-50%, -50%);
+  mask-image: radial-gradient(circle, transparent 42%, #000 50%, #000 72%, transparent 96%);
+}
+.hero-halo-outer { width: clamp(460px, 56vw, 760px); height: clamp(460px, 56vw, 760px); opacity: 0.72; }
+.hero-halo-inner { width: clamp(300px, 36vw, 500px); height: clamp(300px, 36vw, 500px); border-style: solid; border-color: color-mix(in srgb, var(--accent) 11%, transparent); }
+
+/* 5-Card Fanned Interactive Deck (Light Pastel + Night Velvet-Jewel) */
+.deck {
+  --card-width: clamp(128px, 16.4vw, 232px);
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: clamp(256px, 26vw, 366px);
+  width: 100%;
+}
+.deck-card {
+  --shift: 0px; --lift: 0px; --angle: var(--tilt);
+  position: absolute;
+  z-index: var(--stack);
+  width: var(--card-width);
+  aspect-ratio: 4/5;
+  padding: clamp(10px, 1.15vw, 16px);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: clamp(18px, 1.9vw, 26px);
+  background: radial-gradient(ellipse at 14% 4%, rgba(255, 255, 255, 0.56), transparent 62%), var(--card-color);
+  color: var(--card-ink);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 10px 20px rgba(15, 23, 42, 0.1), 0 24px 42px rgba(15, 23, 42, 0.12);
+  transform: translate(calc(var(--x) + var(--shift)), calc(var(--drop) + var(--lift))) rotate(var(--angle));
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s ease;
+}
+.deck-card:nth-child(1) { --card-color: #d6c8ff; --card-ink: #2c2159; --x: -162%; --drop: 28px; --tilt: -14deg; --stack: 1; }
+.deck-card:nth-child(2) { --card-color: #ffbcd4; --card-ink: #572141; --x: -81%; --drop: 9px; --tilt: -7.5deg; --stack: 2; }
+.deck-card:nth-child(3) { --card-color: #9adeff; --card-ink: #0f385c; --x: 0%; --drop: -22px; --tilt: -0.8deg; --stack: 3; }
+.deck-card:nth-child(4) { --card-color: #c7ea91; --card-ink: #26421d; --x: 81%; --drop: 9px; --tilt: 7deg; --stack: 2; }
+.deck-card:nth-child(5) { --card-color: #8bb2fc; --card-ink: #132d63; --x: 162%; --drop: 28px; --tilt: 14deg; --stack: 1; }
+[data-theme="night"] .deck-card { border-color: rgba(255, 255, 255, 0.16); background: radial-gradient(ellipse at 18% 6%, rgba(255, 255, 255, 0.18), transparent 58%), var(--card-color); }
+[data-theme="night"] .deck-card:nth-child(1) { --card-color: #2f2654; --card-ink: #ece4ff; }
+[data-theme="night"] .deck-card:nth-child(2) { --card-color: #492139; --card-ink: #ffdce9; }
+[data-theme="night"] .deck-card:nth-child(3) { --card-color: #153452; --card-ink: #daf3ff; }
+[data-theme="night"] .deck-card:nth-child(4) { --card-color: #213a25; --card-ink: #e0f7c5; }
+[data-theme="night"] .deck-card:nth-child(5) { --card-color: #1c2e59; --card-ink: #dce8ff; }
+
+/* Card Pointer Tilt + Specular Glare */
+.tilt-surface {
+  transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle at var(--light-x, 50%) var(--light-y, 50%), rgba(255, 255, 255, 0.32), transparent 58%);
+  transition: opacity 0.24s ease;
+}
+[data-pointer="tracking"] .tilt-glare { opacity: 1; }
+
+/* Mandatory Unified Desktop Alignment (Must come AFTER base .top .wrap / .library / .chapter-content rules!) */
+@media (min-width: 1100px) {
+  .top .wrap, .library, .chapter-content {
+    width: min(100% - 256px, 1240px);
+    margin-inline-start: max(204px, calc((100% - 1240px) / 2));
+    margin-inline-end: auto;
+  }
+}
+
+/* Reduced Motion & Reduced Transparency Fallbacks */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .tilt-surface, .deck-card { transition: none; transform: none; }
+  .tilt-glare { display: none; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .top .wrap, .glass-pill { background: var(--surface); backdrop-filter: none; -webkit-backdrop-filter: none; }
+}

@@ -1,0 +1,26 @@
+# Dependencies & build output
+/node_modules/
+/dist/
+/.netlify/
+
+# Local environment & runtime data
+.env
+.env.local
+.env.*.local
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.log
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Heavy local promotional video workspace & legacy single-file archive
+/promo-video/
+/我的视觉库.html
+/图鉴素材/内嵌/
+/备份/
+/原始素材/
