@@ -436,6 +436,7 @@ export default function Library({
           </div>
 
           {storage === "offline" && <p className="storage-status" role="status">数据库服务未连接，请检查本地服务或网络。</p>}
+          {storage === "static" && <p className="storage-status" role="status">当前为在线只读预览模式；如需新增卡片或启用 MCP，请在本地运行。</p>}
           {storage === "migration-warning" && <p className="storage-status" role="status">此浏览器的旧数据未自动导入。可以刷新重试，或在旧版导出 JSON 后导入。</p>}
 
           <div className="controls">

@@ -1,4 +1,5 @@
 import { createBackup } from "../shared/card-format.js";
+import { samples } from "../shared/card-data.js";
 export { sourceLink } from "../shared/card-format.js";
 
 const adminPasscodeKey = "my-visual-library-admin-passcode";
@@ -105,7 +106,24 @@ function migrateIndexedDb(installationId) {
 }
 
 export async function loadLibrary() {
-  const health = await request("/api/health");
+  let health;
+  try {
+    health = await request("/api/health");
+  } catch (error) {
+    // Static hosts (e.g. GitHub Pages) return 404/405 or HTML (200) for /api/health;
+    // fall back to built-in seed cards in read-only preview mode.
+    if (error?.status === 404 || error?.status === 405 || error?.status === 200) {
+      return {
+        cards: samples.map((sample) => ({ ...sample, updated: 0 })),
+        storage: "static",
+        authRequired: false,
+        unlocked: true,
+        migrated: 0,
+        migrationWarning: false,
+      };
+    }
+    throw error;
+  }
   if (!["sqlite", "postgres"].includes(health.storage)) throw new Error("数据服务尚未启动。");
   let migrated = 0;
   let migrationWarning = false;
