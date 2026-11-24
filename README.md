@@ -119,4 +119,24 @@ npm start
 - **原创视觉资产与设计系统**（Logo、6 枚原创 3D 贴纸、`porcelain-sticker-studio` 设计规范与 Skills）：采用 **CC BY-NC-SA 4.0**；
 - **允许**：个人学习、学术研究、非商业个人使用与非商业分享（须保留署名与许可声明）；
 - **禁止**：任何形式的商业用途（包括但不限于售卖、付费课程/模板/社群捆绑、商业 SaaS 集成或商业交付）。如需商业授权，请提前联系作者获取书面许可。
+
+---
+
+## 作者与支持
+
+- **作者**：[@zy499](https://github.com/zy499)
+- **在线预览**：[zy499.github.io/my-visual-library](https://zy499.github.io/my-visual-library/)
+- **问题反馈 / 建议**：欢迎提交 [GitHub Issue](https://github.com/zy499/my-visual-library/issues)
+
+如果这个视觉库和 MCP 工具对你的设计或 AI 编程工作流有帮助，欢迎在右上角点个 **⭐ Star** 支持一下，这是持续收录与更新的动力！
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=zy499%2Fmy-visual-library&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=zy499/my-visual-library&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=zy499/my-visual-library&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=zy499/my-visual-library&type=date&legend=top-left" />
+ </picture>
+</a>
 - 第三方开源组件与参考素材的原始归属及免责声明见 [`THIRD-PARTY-NOTICES.md`](./THIRD-PARTY-NOTICES.md)。

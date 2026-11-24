@@ -44,7 +44,7 @@ A local-first visual curation studio, 1,216+ visual references / live motion dem
 Requires **Node.js 22.13+** (uses built-in `node:sqlite`, zero native build tools needed):
 
 ```bash
-git clone <your-repo-url> my-visual-library
+git clone https://github.com/zy499/my-visual-library.git
 cd my-visual-library
 npm ci
 npm run build
@@ -63,4 +63,24 @@ This project is **strictly non-commercial** (see [`LICENSE`](./LICENSE)):
 - **Source code**: [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0)
 - **Original visual assets, 3D stickers, design system & skills**: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 - Personal learning, research, and non-commercial sharing with attribution are welcome. **Any commercial use requires prior written permission from the author.**
+
+---
+
+## Author & Support
+
+- **Author**: [@zy499](https://github.com/zy499)
+- **Live Preview**: [zy499.github.io/my-visual-library](https://zy499.github.io/my-visual-library/)
+- **Feedback & Issues**: [GitHub Issues](https://github.com/zy499/my-visual-library/issues)
+
+If this visual library and MCP server help your design or AI coding workflow, please consider giving it a **⭐ Star** — it really keeps the curation going!
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=zy499%2Fmy-visual-library&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=zy499/my-visual-library&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=zy499/my-visual-library&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=zy499/my-visual-library&type=date&legend=top-left" />
+ </picture>
+</a>
 - Third-party components, CC imagery, and brand design-study disclaimers are documented in [`THIRD-PARTY-NOTICES.md`](./THIRD-PARTY-NOTICES.md).
