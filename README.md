@@ -9,8 +9,9 @@
 本地优先的视觉策展手账 & AI 设计灵感 MCP 武器库  
 收藏视觉参考 · 拆解实时动效 · 整理 `DESIGN.md` 风格配方 · 一键喂给 AI 编程工具
 
-[简体中文](./README.md) · [English](./README.en.md) · [MCP 接入指南](./MCP接入指南.md) · [非商用许可协议](./LICENSE)
+[在线预览](https://zy499.github.io/my-visual-library/) · [简体中文](./README.md) · [English](./README.en.md) · [MCP 接入指南](./MCP接入指南.md) · [非商用许可协议](./LICENSE)
 
+[![Live Preview](https://img.shields.io/badge/Live%20Preview-GitHub%20Pages-0a7ea4?style=flat-square)](https://zy499.github.io/my-visual-library/)
 ![License: Non-Commercial Only](https://img.shields.io/badge/License-Non--Commercial%20Only-d93025?style=flat-square)
 ![Node.js 22.13+](https://img.shields.io/badge/Node.js-22.13%2B-339933?style=flat-square)
 ![MCP Ready](https://img.shields.io/badge/MCP-Streamable%20HTTP%20%2F%20Stdio-0071e3?style=flat-square)

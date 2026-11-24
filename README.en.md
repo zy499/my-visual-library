@@ -8,8 +8,9 @@
 
 A local-first visual curation studio, 1,216+ visual references / live motion demos / `DESIGN.md` recipes, and a zero-dependency **MCP Server** for AI coding agents.
 
-[简体中文](./README.md) · [English](./README.en.md) · [MCP Guide (ZH)](./MCP接入指南.md) · [Non-Commercial License](./LICENSE)
+[Live Preview](https://zy499.github.io/my-visual-library/) · [简体中文](./README.md) · [English](./README.en.md) · [MCP Guide (ZH)](./MCP接入指南.md) · [Non-Commercial License](./LICENSE)
 
+[![Live Preview](https://img.shields.io/badge/Live%20Preview-GitHub%20Pages-0a7ea4?style=flat-square)](https://zy499.github.io/my-visual-library/)
 ![License: Non-Commercial Only](https://img.shields.io/badge/License-Non--Commercial%20Only-d93025?style=flat-square)
 ![Node.js 22.13+](https://img.shields.io/badge/Node.js-22.13%2B-339933?style=flat-square)
 ![MCP Ready](https://img.shields.io/badge/MCP-Streamable%20HTTP%20%2F%20Stdio-0071e3?style=flat-square)
